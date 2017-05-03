@@ -20,11 +20,11 @@ app.controller('loginCtrl', function ($state, $scope, $http) {
 	$scope.login = function () { 
 		var url = './login.action?userName='+$scope.user.userName+'&password='+$scope.user.password;
 	    $http.get(url).then(function(response){
-        	alert("success"+response.data);
         	$scope.resultMessage = response.data;
         	if(response.data == 'Success'){
         	    $state.go('details');
         	}else{
+			alert("invalid credientials");
         		$state.go('login');
         	}
            },function (error){
@@ -34,7 +34,7 @@ app.controller('loginCtrl', function ($state, $scope, $http) {
  });
 app.controller('detailsCtrl', function ($scope,$http,$state) {
 	$scope.getDetails = function () { 
-	var url = './getDetails.action';alert(url)
+	var url = './getDetails.action';
     $http.get(url).then(function(response){
     	alert(response.data)
     	if(response.data == 'null'){
