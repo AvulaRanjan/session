@@ -36,6 +36,11 @@ public class ExampleController {
 	        ModelAndView mav = new ModelAndView("index.html");
 	        return mav; 
 	    }
+	@RequestMapping("/idle")
+	 public ModelAndView showIdlePage() {
+	        ModelAndView mav = new ModelAndView("example.html");
+	        return mav; 
+	    }
 	@GetMapping(produces = "text/plain", value = "/login")
 	public String loginAction(){
 		String mav = "Login";

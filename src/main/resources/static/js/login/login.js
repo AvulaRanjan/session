@@ -16,6 +16,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
         
     });
+
 app.controller('loginCtrl', function ($state, $scope, $http) {
 	$scope.login = function () { 
 		var url = './login.action?userName='+$scope.user.userName+'&password='+$scope.user.password;
